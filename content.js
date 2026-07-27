@@ -28,7 +28,7 @@ window.SITE_CONTENT = {
     ["Prowadzenie","Regularny, krótki status; szybka eskalacja ryzyk; decyzje zapisane w jednym miejscu."],
     ["Dowiezienie","Kontrola jakości, odbiór, zamknięcie zmian i komplet dokumentów."]
   ],
-  email: "kontakt@twoja-domena.pl",
+  email: "adam@adam-jakubowski.com",
   location: "POLSKA / NIEMCY / ZDALNIE",
   availability: "PROJEKTY FIT-OUT I WNĘTRZA KOMERCYJNE"
 };
