@@ -1,26 +1,39 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Kompleksowe prowadzenie projektów fit-out — od założeń i wyceny po produkcję, dostawę i odbiór.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Adam Jakubowski — prowadzenie projektów wnętrz, wyposażenia i realizacji indywidualnych w Europie.">
+  <meta name="theme-color" content="#171918">
   <title>Adam Jakubowski — Project Management</title>
+  <link rel="icon" href="assets/logo-aj.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="content.js"></script><script defer src="app.js"></script>
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-<header class="nav"><a class="brand" href="#top" aria-label="Strona główna"><span>AJ</span><b id="brandName">Adam Jakubowski</b></a><button class="menu" aria-label="Otwórz menu">Menu</button><nav><a href="#o-mnie">O mnie</a><a href="#zakres">Zakres</a><a href="#projekty">Projekty</a><a class="nav-cta" href="#kontakt">Kontakt</a></nav></header>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Home"><img src="assets/logo-aj.svg" alt="AJ"><b>Adam Jakubowski</b></a>
+  <button class="menu" type="button" aria-expanded="false">Menu</button>
+  <nav>
+    <a data-i18n="navAbout" href="#o-mnie"></a><a data-i18n="navScope" href="#zakres"></a><a data-i18n="navProjects" href="#projekty"></a>
+    <div class="languages" aria-label="Language"><button data-lang="pl">PL</button><button data-lang="en">EN</button><button data-lang="de">DE</button></div>
+    <a class="nav-cta" data-i18n="navContact" href="#kontakt"></a>
+  </nav>
+</header>
 <main id="top">
-<section class="hero">
- <div class="hero-copy reveal"><p class="eyebrow" id="eyebrow"></p><h1 id="heroTitle"></h1><p class="lead" id="heroLead"></p><div class="actions"><a class="button primary" href="#kontakt">Porozmawiajmy o projekcie</a><a class="button ghost" href="#projekty">Zobacz doświadczenie</a></div></div>
- <div class="hero-visual reveal" aria-label="Abstrakcyjna kompozycja materiałów"><div class="steel"></div><div class="wood"></div><div class="plan"><span>01</span><i></i><i></i><i></i><b>PLAN / BUILD / DELIVER</b></div></div>
- <div class="hero-meta"><span>PL / DE / EN</span><span>FIT-OUT &amp; INTERIORS</span><span>EUROPE</span></div>
-</section>
-<section class="statement reveal"><p>Dobry projekt to nie tylko efekt końcowy.</p><h2>To kontrola zakresu, decyzji, jakości i terminów — od pierwszej rozmowy do odbioru.</h2></section>
-<section class="about grid-section" id="o-mnie"><div><p class="section-no">01 / O MNIE</p></div><div class="reveal"><h2 id="aboutTitle"></h2><div id="aboutText"></div><div class="facts" id="facts"></div></div></section>
-<section class="services grid-section dark" id="zakres"><div><p class="section-no">02 / ZAKRES</p><p class="muted">Kompleksowo, ale bez zbędnej biurokracji.</p></div><div><div id="services"></div></div></section>
-<section class="projects" id="projekty"><div class="project-head"><div><p class="section-no">03 / DOŚWIADCZENIE</p><h2>Wybrane typy realizacji</h2></div><p>Na wersji publicznej pokażemy tylko projekty i materiały, na których publikację masz zgodę.</p></div><div class="project-grid" id="projectGrid"></div><p class="disclaimer">Prezentowane pozycje są obecnie anonimowymi przykładami zakresu doświadczenia. Zdjęcia i nazwy klientów dodamy po potwierdzeniu praw do publikacji.</p></section>
-<section class="process grid-section"><div><p class="section-no">04 / SPOSÓB PRACY</p></div><div class="steps" id="steps"></div></section>
-<section class="contact" id="kontakt"><div class="contact-inner reveal"><p class="section-no">05 / KONTAKT</p><h2>Masz projekt, który wymaga spokojnego prowadzenia?</h2><p>Opisz krótko zakres, lokalizację i oczekiwany termin. Wrócę z konkretnymi pytaniami i propozycją następnego kroku.</p><a id="emailLink" class="email" href="#"></a><div class="contact-meta"><span id="location"></span><span id="availability"></span></div></div></section>
+  <section class="hero">
+    <div class="hero-copy reveal"><p class="eyebrow" id="eyebrow"></p><h1 id="heroTitle"></h1><p class="lead" id="heroLead"></p><div class="actions"><a class="button primary" data-i18n="heroCta" href="#kontakt"></a><a class="button ghost" data-i18n="heroSecondary" href="#projekty"></a></div></div>
+    <figure class="hero-visual reveal"><img src="assets/hero-render.svg" alt="Architectural interior visualization"><figcaption>PROJECT / DETAIL / DELIVERY</figcaption></figure>
+    <div class="hero-meta"><span>PL / EN / DE</span><span data-i18n="heroMeta"></span><span>EUROPE</span></div>
+  </section>
+  <section class="statement reveal"><p data-i18n="statementSmall"></p><h2 data-i18n="statement"></h2></section>
+  <section class="about grid-section" id="o-mnie"><div><p class="section-no" data-section="about"></p><p class="side-note" data-i18n="aboutSide"></p></div><div class="reveal"><h2 id="aboutTitle"></h2><div id="aboutText" class="about-copy"></div><div class="facts" id="facts"></div></div></section>
+  <section class="services grid-section dark" id="zakres"><div><p class="section-no" data-section="scope"></p><p class="muted" data-i18n="scopeSide"></p></div><div id="services"></div></section>
+  <section class="projects" id="projekty"><div class="project-head"><div><p class="section-no" data-section="projects"></p><h2 data-i18n="projectsTitle"></h2></div><p data-i18n="projectsIntro"></p></div><div class="project-grid" id="projectGrid"></div><p class="disclaimer" data-i18n="renderDisclaimer"></p></section>
+  <section class="process grid-section"><div><p class="section-no" data-section="process"></p></div><div class="steps" id="steps"></div></section>
+  <section class="contact" id="kontakt"><div class="contact-layout"><div class="contact-copy reveal"><p class="section-no" data-section="contact"></p><h2 data-i18n="contactTitle"></h2><p data-i18n="contactIntro"></p><a id="emailLink" class="email" href="mailto:info@adam-jakubowski.com">info@adam-jakubowski.com</a><div class="contact-meta"><span data-i18n="location"></span><span data-i18n="availability"></span></div></div><form id="contactForm" class="contact-form"><label><span data-i18n="formName"></span><input name="name" autocomplete="name" required></label><label><span data-i18n="formEmail"></span><input name="email" type="email" autocomplete="email" required></label><label><span data-i18n="formSubject"></span><input name="subject" required></label><label><span data-i18n="formMessage"></span><textarea name="message" rows="6" required></textarea></label><button class="button primary" type="submit" data-i18n="formSend"></button><small data-i18n="formNote"></small></form></div></section>
 </main>
-<footer><span id="footerName"></span><span>Project Management / Fit-out</span><a href="#top">Do góry ↑</a></footer>
-</body></html>
+<footer><span id="footerName"></span><span data-i18n="footerRole"></span><a data-i18n="backTop" href="#top"></a></footer>
+</body>
+</html>
