@@ -1,0 +1,1 @@
+{"name":"adam-jakubowski-portfolio","private":true,"scripts":{"build:css":"tailwindcss -i ./src.css -o ./styles.css --minify"},"devDependencies":{"@tailwindcss/cli":"^4.1.11","tailwindcss":"^4.1.11"}}
