@@ -1,0 +1,15 @@
+/* Multi-page layout additions */
+.page-hero{min-height:52vh;padding:clamp(155px,18vh,220px) var(--pad) 70px;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--line);background:radial-gradient(circle at 78% 8%,rgba(148,171,159,.13),transparent 38%),radial-gradient(circle at 18% 92%,rgba(167,123,79,.1),transparent 32%)}
+.page-hero h1,.standalone-contact h1{max-width:980px;margin:18px 0 0;font:400 clamp(48px,7vw,104px)/.98 Newsreader,serif;letter-spacing:-.035em}
+.page-lead{max-width:640px;margin:28px 0 0;color:var(--muted);font-size:clamp(15px,1.4vw,20px)}
+.page-content{min-height:48vh}
+.page-directory{padding:0 var(--pad) 100px;display:grid;grid-template-columns:repeat(2,1fr)}
+.page-directory a{position:relative;min-height:220px;padding:34px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:end;border:1px solid rgba(255,255,255,.1);margin:-1px 0 0 -1px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012));overflow:hidden;transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.page-directory a:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.09) 46%,transparent 69%);transform:translateX(-120%);transition:transform .8s ease;pointer-events:none}
+.page-directory a:hover{z-index:1;transform:translateY(-4px);border-color:rgba(255,255,255,.28);background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.02))}
+.page-directory a:hover:before{transform:translateX(120%)}
+.page-directory span{align-self:start;color:var(--wood);font-size:10px;letter-spacing:.18em}.page-directory h2{margin:0;font:400 clamp(34px,4vw,60px)/1 Newsreader,serif}.page-directory b{font-size:28px;font-weight:400;color:var(--steel)}
+.page-directory a:last-child{grid-column:1/-1}
+.standalone-contact{min-height:calc(100vh - 80px);padding-top:clamp(155px,18vh,220px)}
+.standalone-contact .contact-layout{align-items:start}
+@media(max-width:800px){.page-hero{min-height:44vh;padding-top:130px}.page-directory{grid-template-columns:1fr;padding-bottom:65px}.page-directory a,.page-directory a:last-child{grid-column:auto;min-height:150px;padding:24px}.page-directory h2{font-size:36px}.standalone-contact{padding-top:130px}.page-hero h1,.standalone-contact h1{font-size:48px}}
