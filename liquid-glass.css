@@ -1,4 +1,56 @@
 
+/* Glossy depth — soft reflections across backgrounds and glass surfaces. */
+body {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 42% at 88% 2%, rgba(170, 193, 183, .12), transparent 68%),
+    radial-gradient(ellipse 52% 34% at 4% 39%, rgba(147, 107, 68, .09), transparent 72%),
+    var(--black);
+}
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(118deg, transparent 17%, rgba(255, 255, 255, .025) 32%, transparent 47%),
+    radial-gradient(circle at 76% 72%, rgba(191, 210, 201, .055), transparent 27%);
+}
+.hero {
+  background:
+    linear-gradient(118deg, transparent 42%, rgba(255, 255, 255, .035) 58%, transparent 73%),
+    radial-gradient(circle at 90% 15%, #2a302d 0, transparent 39%),
+    var(--black);
+}
+.statement,
+.about,
+.projects,
+.process,
+.contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.statement::before,
+.about::before,
+.projects::before,
+.contact::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(720px, 62vw);
+  aspect-ratio: 1.8;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+  background: radial-gradient(ellipse, rgba(220, 232, 226, .07), transparent 68%);
+}
+.statement::before { right: -14%; top: -25%; }
+.about::before { left: -18%; bottom: -8%; background: radial-gradient(ellipse, rgba(180, 132, 87, .065), transparent 68%); }
+.projects::before { right: -12%; top: 9%; }
+.contact::before { left: 18%; bottom: -24%; background: radial-gradient(ellipse, rgba(185, 145, 104, .075), transparent 68%); }
+
 /* Liquid glass — restrained, structural accents inspired by Apple OS 27. */
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .nav {
@@ -59,12 +111,31 @@
   .fact,
   .project-card,
   .contact-form {
-    border-color: rgba(255, 255, 255, .13);
-    background: linear-gradient(145deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .022));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 18px 55px rgba(0, 0, 0, .12);
-    -webkit-backdrop-filter: saturate(125%) blur(14px);
-    backdrop-filter: saturate(125%) blur(14px);
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(255, 255, 255, .16);
+    background: linear-gradient(145deg, rgba(255, 255, 255, .095), rgba(255, 255, 255, .024) 52%, rgba(203, 220, 212, .04));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13), inset 1px 0 0 rgba(255, 255, 255, .04), 0 22px 60px rgba(0, 0, 0, .16);
+    -webkit-backdrop-filter: saturate(135%) blur(16px);
+    backdrop-filter: saturate(135%) blur(16px);
   }
+  .fact::after,
+  .project-card::after,
+  .contact-form::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -65%;
+    left: -25%;
+    width: 72%;
+    height: 150%;
+    pointer-events: none;
+    transform: rotate(24deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .065), transparent);
+  }
+  .fact > *,
+  .project-card > *,
+  .contact-form > * { position: relative; z-index: 1; }
   .contact-form input,
   .contact-form textarea {
     border-color: rgba(255, 255, 255, .15);
