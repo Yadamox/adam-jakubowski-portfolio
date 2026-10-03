@@ -82,7 +82,11 @@ def url(canonical,lang): return f'/{lang}/{fname(canonical,lang)}' if canonical!
 
 def head(lang,title,desc,canonical):
     alt=''.join(f'<link rel="alternate" hreflang="{l}" href="https://adam-jakubowski.com{url(canonical,l)}">' for l in langs)
-    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{escape(desc)}"><meta name="theme-color" content="#11100f"><title>{escape(title)} — Adam Jakubowski</title><link rel="icon" href="/assets/logo-aj.svg"><link rel="stylesheet" href="/site-v9.css?v=9"><script defer src="/site-v9.js?v=9"></script><link rel="canonical" href="https://adam-jakubowski.com{url(canonical,lang)}">{alt}</head><body><a class="skip" href="#main">Skip to content</a>'''
+    full_title=f'{title} — Adam Jakubowski'
+    page_url=f'https://adam-jakubowski.com{url(canonical,lang)}'
+    og_image='https://adam-jakubowski.com/assets/og/adam-jakubowski-project-delivery.jpg'
+    social=f'<meta property="og:type" content="website"><meta property="og:site_name" content="Adam Jakubowski — Project Delivery"><meta property="og:title" content="{escape(full_title)}"><meta property="og:description" content="{escape(desc)}"><meta property="og:url" content="{page_url}"><meta property="og:image" content="{og_image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(full_title)}"><meta name="twitter:description" content="{escape(desc)}"><meta name="twitter:image" content="{og_image}">'
+    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{escape(desc)}"><meta name="theme-color" content="#11100f"><title>{escape(full_title)}</title><link rel="icon" href="/assets/logo-aj.svg"><link rel="stylesheet" href="/site-v9.css?v=9"><script defer src="/site-v9.js?v=9"></script><link rel="canonical" href="{page_url}">{alt}{social}</head><body><a class="skip" href="#main">Skip to content</a>'''
 
 def nav(lang):
     c=langs[lang]
