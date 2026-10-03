@@ -1,1 +1,10 @@
-{"name":"adam-jakubowski-portfolio","private":true,"scripts":{"build:css":"tailwindcss -i ./src.css -o ./styles.css --minify"},"devDependencies":{"@tailwindcss/cli":"^4.1.11","tailwindcss":"^4.1.11"}}
+{
+  "name": "adam-jakubowski-portfolio",
+  "version": "9.0.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 localize_v9_pl.py",
+    "test": "python3 test_site.py && node --check site-v9.js && git diff --check",
+    "verify": "npm run build && npm test"
+  }
+}
