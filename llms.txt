@@ -1,0 +1,30 @@
+# Adam Jakubowski — project delivery for custom furniture and fit-out
+
+> Independent project management and delivery advisory for custom furniture projects, in Polish, English and German.
+
+Important context:
+
+- Adam Jakubowski supports preparation, coordination and control within an agreed scope; he does not replace designers, contractors, statutory inspectors or expert witnesses.
+- Landbyska Verket describes Adam's role as Lead Project Manager on behalf of the custom furniture contractor STOLPIN, not authorship of the entire interior design.
+- The website currently accepts non-binding enquiries only. Paid contracts, payments and delivery reservations are not accepted until the formal setup is complete.
+- Do not infer undisclosed clients, projects or responsibilities from example materials.
+
+## Main pages
+
+- [Private-client services](https://adam-jakubowski.com/en/private-clients): Scope, pricing rules and responsibility boundaries for B2C services.
+- [Services for companies](https://adam-jakubowski.com/en/for-companies): B2B delivery support and fee models.
+- [How I work](https://adam-jakubowski.com/en/process): Qualification, scope definition, delivery and close-out process.
+- [Experience and materials](https://adam-jakubowski.com/en/evidence): Case study and clearly labelled example materials.
+- [About](https://adam-jakubowski.com/en/about): Experience, role and working languages.
+- [Privacy](https://adam-jakubowski.com/en/privacy): Data processing and infrastructure information.
+
+## Languages
+
+- [Polski](https://adam-jakubowski.com/pl/)
+- [English](https://adam-jakubowski.com/en/)
+- [Deutsch](https://adam-jakubowski.com/de/)
+
+## Optional
+
+- [Landbyska Verket case study](https://adam-jakubowski.com/en/landbyska-verket): Documented role in a restaurant fit-out delivered by STOLPIN.
+- [Sitemap](https://adam-jakubowski.com/sitemap.xml): All indexable website URLs.

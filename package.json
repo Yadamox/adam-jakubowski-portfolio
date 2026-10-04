@@ -1,10 +1,14 @@
 {
   "name": "adam-jakubowski-portfolio",
-  "version": "9.0.0",
+  "version": "11.0.0",
   "private": true,
   "scripts": {
-    "build": "python3 localize_v9_pl.py",
-    "test": "python3 test_site.py && node --check site-v9.js && git diff --check",
-    "verify": "npm run build && npm test"
+    "build": "python3 build_v10.py",
+    "test": "python3 test_site.py && node --check site-v10.js && git diff --check",
+    "verify": "npm run build && npm test",
+    "release": "npm run verify && python3 build_release.py"
+  },
+  "devDependencies": {
+    "lighthouse": "^13.0.3"
   }
 }
