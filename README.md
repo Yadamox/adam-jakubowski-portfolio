@@ -1,13 +1,17 @@
-# Strona Adam Jakubowski — v11
+# Strona Adam Jakubowski — v13
 
 Statyczna, trójjęzyczna strona usługowa PL/EN/DE. Produkcja działa na Cloudflare Pages.
 
 ## Źródło i generowanie
 
-- Główne źródło treści i szablonów: `build_v10.py`.
-- Case study Landbyska Verket: trzy pliki `*/landbyska-verket.html`.
-- Style i skrypty: `site-v10.css`, `site-v10.js`, `case-study.css`.
+- Punkt wejścia: `build_v13.py`; cały build jest samowystarczalny w tym repozytorium.
+- Treści i bazowe szablony: `build_v10.py`; case study: `case-studies-source.json`.
+- Warstwa układu v13: `transform_v13.py`; style i ruch: `site-v13.css`, `site-v13.js`.
+- `nojs-v13.css` jest wczytywany wyłącznie przez `noscript`: pełna nawigacja bez JS, bez przeskoku strony przy wczytywaniu skryptu.
+- `base_content.py` odczytuje definicje treści przez AST, bez ponownego generowania stron podczas testów.
+- `approved-v13-sha256.json` i `test_v13.py` chronią zaakceptowany wygląd oraz treść; różnice techniczne: produkcyjne indeksowanie i wydzielenie fallbacku no-JS.
 - Nie edytuj ręcznie stron generowanych — następny build je nadpisze.
+- Podglądy v12/v13 i iCloud nie są zależnościami procesu publikacji.
 
 ## Testy
 

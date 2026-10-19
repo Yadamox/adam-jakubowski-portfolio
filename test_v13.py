@@ -18,7 +18,7 @@ for name,expected in manifest.items():
    assert '/site-v13.css?v=13' in s and '/site-v13.js?v=13' in s,name
    assert 'site-v10.' not in s and '/case-study.css' not in s,name
    assert s.count('aria-current="page"')<=1,name
-  # Only the unpublished package's noindex directive differs.
+  # Only preview noindex and the separately tested no-JS fallback link differ.
   data=s.replace('<meta name="robots" content="noindex,nofollow">','').replace('<noscript><link rel="stylesheet" href="/nojs-v13.css?v=13"></noscript>','').encode()
  assert hashlib.sha256(data).hexdigest()==expected,('approved version mismatch',name)
 for lang,process,private,business in [('pl','proces','dla-klienta-prywatnego','dla-firm'),('en','process','private-clients','for-companies'),('de','arbeitsweise','privatkunden','fuer-unternehmen')]:
