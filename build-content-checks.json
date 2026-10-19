@@ -1,0 +1,311 @@
+[
+  {
+    "path": "de/arbeitsweise.html",
+    "all_original_words_preserved": true,
+    "family": "process"
+  },
+  {
+    "path": "de/b2b-formular.html",
+    "all_original_words_preserved": true,
+    "family": "business"
+  },
+  {
+    "path": "de/b2c-formular.html",
+    "all_original_words_preserved": true,
+    "family": "private"
+  },
+  {
+    "path": "de/danke.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "de/datenschutz.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "de/faq.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "de/fuer-unternehmen.html",
+    "all_original_words_preserved": true,
+    "family": "business"
+  },
+  {
+    "path": "de/index.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "de/kontakt.html",
+    "all_original_words_preserved": true,
+    "family": "contact"
+  },
+  {
+    "path": "de/landbyska-verket.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "de/nachweise.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "de/o-mnie.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "de/pre-order-checklist.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "de/privatkunden.html",
+    "all_original_words_preserved": true,
+    "family": "private"
+  },
+  {
+    "path": "de/proces.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "de/projekty.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "de/sample-handover-report.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "de/sample-risk-register.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "de/ueber-mich.html",
+    "all_original_words_preserved": true,
+    "family": "about"
+  },
+  {
+    "path": "de/zakres.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "en/about.html",
+    "all_original_words_preserved": true,
+    "family": "about"
+  },
+  {
+    "path": "en/b2b-form.html",
+    "all_original_words_preserved": true,
+    "family": "business"
+  },
+  {
+    "path": "en/b2c-form.html",
+    "all_original_words_preserved": true,
+    "family": "private"
+  },
+  {
+    "path": "en/contact.html",
+    "all_original_words_preserved": true,
+    "family": "contact"
+  },
+  {
+    "path": "en/evidence.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "en/faq.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "en/for-companies.html",
+    "all_original_words_preserved": true,
+    "family": "business"
+  },
+  {
+    "path": "en/index.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "en/kontakt.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "en/landbyska-verket.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "en/o-mnie.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "en/pre-order-checklist.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "en/privacy.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "en/private-clients.html",
+    "all_original_words_preserved": true,
+    "family": "private"
+  },
+  {
+    "path": "en/proces.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "en/process.html",
+    "all_original_words_preserved": true,
+    "family": "process"
+  },
+  {
+    "path": "en/projekty.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "en/sample-handover-report.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "en/sample-risk-register.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "en/thank-you.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "en/zakres.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "index.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "kontakt.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "o-mnie.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "pl/dla-firm.html",
+    "all_original_words_preserved": true,
+    "family": "business"
+  },
+  {
+    "path": "pl/dla-klienta-prywatnego.html",
+    "all_original_words_preserved": true,
+    "family": "private"
+  },
+  {
+    "path": "pl/dowody.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "pl/dziekuje.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "pl/faq.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "pl/formularz-b2b.html",
+    "all_original_words_preserved": true,
+    "family": "business"
+  },
+  {
+    "path": "pl/formularz-b2c.html",
+    "all_original_words_preserved": true,
+    "family": "private"
+  },
+  {
+    "path": "pl/index.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "pl/kontakt.html",
+    "all_original_words_preserved": true,
+    "family": "contact"
+  },
+  {
+    "path": "pl/landbyska-verket.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "pl/o-mnie.html",
+    "all_original_words_preserved": true,
+    "family": "about"
+  },
+  {
+    "path": "pl/polityka-prywatnosci.html",
+    "all_original_words_preserved": true,
+    "family": "general"
+  },
+  {
+    "path": "pl/pre-order-checklist.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "pl/proces.html",
+    "all_original_words_preserved": true,
+    "family": "process"
+  },
+  {
+    "path": "pl/projekty.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "pl/sample-handover-report.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "pl/sample-risk-register.html",
+    "all_original_words_preserved": true,
+    "family": "evidence"
+  },
+  {
+    "path": "pl/zakres.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "proces.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "projekty.html",
+    "all_original_words_preserved": true
+  },
+  {
+    "path": "zakres.html",
+    "all_original_words_preserved": true
+  }
+]

@@ -77,24 +77,24 @@ for path in html_files:
         errors.append(f"Forbidden responsibility promise: {rel}")
 
 # Primary generated pages: canonical, language equivalence and clean URLs.
-for key, triplet in __import__('build_v10').PATHS.items():
+for key, triplet in __import__('base_content').PATHS.items():
     for idx,lang in enumerate(LANGS):
         rel=f"{lang}/{triplet[idx]}"
         path=ROOT/rel
         if not path.exists(): errors.append(f"Missing generated page: {rel}"); continue
         text,doc=docs[rel]
-        expected=__import__('build_v10').url(key,lang)
+        expected=__import__('base_content').url(key,lang)
         expected_canon=DOMAIN + expected
         if doc.canon != [expected_canon]: errors.append(f"Bad canonical in {rel}: {doc.canon} != {expected_canon}")
         if key == "thanks" and not any(m.get("name")=="robots" and "noindex" in m.get("content","") for m in doc.metas):
             errors.append(f"Thank-you page must be noindex: {rel}")
         if "/llms.txt" not in doc.links: errors.append(f"Missing llms.txt discovery link: {rel}")
         alt=dict(doc.alts)
-        expected_alts={l: DOMAIN + __import__('build_v10').url(key,l) for l in LANGS}
+        expected_alts={l: DOMAIN + __import__('base_content').url(key,l) for l in LANGS}
         expected_alts["x-default"]=DOMAIN+"/pl/"
         if alt != expected_alts: errors.append(f"Bad hreflang set in {rel}: {alt}")
         for l in LANGS:
-            if __import__('build_v10').url(key,l) not in doc.links: errors.append(f"Language switch loses route in {rel}: {l}")
+            if __import__('base_content').url(key,l) not in doc.links: errors.append(f"Language switch loses route in {rel}: {l}")
 
 # Case studies follow the same clean and contextual language rules.
 for lang in LANGS:
@@ -104,8 +104,8 @@ for lang in LANGS:
     for l in LANGS:
         if f"/{l}/landbyska-verket" not in doc.links: errors.append(f"Bad case language switch: {rel} -> {l}")
     if dict(doc.alts).get("x-default") != DOMAIN+"/pl/landbyska-verket": errors.append(f"Bad case x-default: {rel}")
-    if "/site-v10.css?v=11" not in text or "/site-v10.js?v=11" not in text or "PROJECT DIRECTION" in text:
-        errors.append(f"Case study not unified with v11: {rel}")
+    if "/site-v13.css?v=13" not in text or "/site-v13.js?v=13" not in text or "PROJECT DIRECTION" in text:
+        errors.append(f"Case study not unified with v13: {rel}")
     if any(x in text for x in ("elementy konstrukcyjne sufitu","structural ceiling elements","konstruktive Deckenelemente","Jeden punkt koordynacji","One coordination point","Ein Koordinationspunkt")):
         errors.append(f"Case study overstates scope: {rel}")
 
@@ -121,7 +121,7 @@ for rel in FORM_FILES:
     if "programie pocztowym" not in text and "email application" not in text and "E-Mail-Programm" not in text:
         errors.append(f"Missing local email explanation: {rel}")
     lang=rel[:2]
-    if __import__('build_v10').T[lang]['availability_notice'] not in text: errors.append(f"Missing formal-gate notice: {rel}")
+    if __import__('base_content').T[lang]['availability_notice'] not in text: errors.append(f"Missing formal-gate notice: {rel}")
     if "b2b" in rel and not any(x in text for x in ("Nie wpisuj danych osób fizycznych","Do not enter personal","Keine personenbezogenen")):
         errors.append(f"Missing third-party data warning: {rel}")
 
@@ -137,14 +137,14 @@ for rel in PRIVACY_FILES:
 pl_private=docs["pl/dla-klienta-prywatnego.html"][0]
 for required in ("590 zł — cena końcowa","do 60 minut","3 dni roboczych","2 zł/km","24 godziny","50% ceny"):
     if required not in pl_private: errors.append(f"B2C terms missing: {required}")
-if pl_private.count(__import__('build_v10').T['pl']['availability_notice']) < 4: errors.append("Formal-gate notice missing beside B2C prices")
+if pl_private.count(__import__('base_content').T['pl']['availability_notice']) < 4: errors.append("Formal-gate notice missing beside B2C prices")
 if "kontrola instalacji ani zastępstwo odbioru przez uprawnionego specjalistę" not in pl_private: errors.append("Visible-scope handover boundary missing")
 pl_business=docs["pl/dla-firm.html"][0]
 for required in ("wartość netto faktycznie koordynowanych pakietów","minimalne wynagrodzenie","limit maksymalny"):
     if required not in pl_business.lower(): errors.append(f"B2B percentage rule missing: {required}")
 for lang,home in (("pl","pl/index.html"),("en","en/index.html"),("de","de/index.html")):
-    if __import__('build_v10').T[lang]['availability_notice'] not in docs[home][0]: errors.append(f"Formal-gate notice missing on home: {home}")
-if __import__('build_v10').T['de']['territory_note'] not in docs['de/privatkunden.html'][0]: errors.append("German foreign-sales limitation missing")
+    if __import__('base_content').T[lang]['availability_notice'] not in docs[home][0]: errors.append(f"Formal-gate notice missing on home: {home}")
+if __import__('base_content').T['de']['territory_note'] not in docs['de/privatkunden.html'][0]: errors.append("German foreign-sales limitation missing")
 if "ten opis nie wyłącza odpowiedzialności wymaganej prawem" not in pl_private: errors.append("Own-scope liability clarification missing")
 
 # No public or canonical URL uses .html; sitemap excludes utility pages.
