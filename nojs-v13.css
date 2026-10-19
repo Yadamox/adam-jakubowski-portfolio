@@ -1,0 +1,7 @@
+/* Only fetched inside <noscript>: no fallback-menu flash with deferred JS. */
+@media(max-width:1280px){
+ .topbar{position:relative;height:auto;flex-wrap:wrap}
+ .topbar .menu{display:none}
+ .topbar #nav{display:flex;position:static;flex-basis:100%;flex-wrap:wrap;gap:12px;padding:12px 0;background:transparent}
+ .topbar #nav>a{font-size:14px}
+}

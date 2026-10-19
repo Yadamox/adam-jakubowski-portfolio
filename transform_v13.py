@@ -57,7 +57,7 @@ for p in sorted(BASE.rglob('*.html')):
   return tag
  newnav=re.sub(r'<a\b[^>]*>',navactive,nav[0]);s=s.replace(nav[0],newnav)
  s=s.replace('class="menu"','class="menu" data-close="'+v['close']+'"',1)
- s=s.replace('</head>','<meta name="view-transition" content="same-origin"></head>')
+ s=s.replace('</head>','<meta name="view-transition" content="same-origin"><noscript><link rel="stylesheet" href="/nojs-v13.css?v=13"></noscript></head>')
  if family=='process':s=s.replace('class="steps detailed"','class="steps detailed control-timeline"')
  # Situation shortcuts lead to existing cards, without removing any scope or price.
  if family in ('private','business') and 'class="cards"' in s:

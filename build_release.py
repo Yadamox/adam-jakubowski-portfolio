@@ -6,7 +6,7 @@ OUT = ROOT.parent / ".cloudflare-release"
 PUBLIC_DIRS = ("pl", "en", "de", "assets", ".well-known")
 PUBLIC_FILES = (
     "index.html", "kontakt.html", "o-mnie.html", "proces.html", "projekty.html", "zakres.html",
-    "site-v13.css", "site-v13.js", "sitemap.xml", "robots.txt", "llms.txt", "_headers", "_redirects",
+    "site-v13.css", "site-v13.js", "nojs-v13.css", "sitemap.xml", "robots.txt", "llms.txt", "_headers", "_redirects",
 )
 
 if OUT.exists():

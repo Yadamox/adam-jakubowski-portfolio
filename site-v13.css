@@ -246,10 +246,6 @@ main{view-transition-name:page-content}
 .nav-backdrop{display:none}
 @media(max-width:1280px){
  .topbar{--nav-height:88px}.topbar.is-scrolled{--nav-height:76px}
- html:not(.enhanced) .topbar{position:relative;height:auto;flex-wrap:wrap}
- html:not(.enhanced) .topbar .menu{display:none}
- html:not(.enhanced) .topbar #nav{display:flex;position:static;flex-basis:100%;flex-wrap:wrap;gap:12px;padding:12px 0;background:transparent}
- html:not(.enhanced) .topbar #nav>a{font-size:14px}
  html.enhanced .topbar #nav{display:flex;position:absolute;top:100%;left:0;right:0;max-height:calc(100svh - var(--nav-height));overflow-y:auto;flex-direction:column;align-items:stretch;padding:18px var(--pad) 26px;background:#f7f5f0;visibility:hidden;pointer-events:none;opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(-8px);transition:clip-path .5s var(--motion-ease),transform .5s var(--motion-ease),opacity .3s,visibility .5s}
  html.enhanced .topbar #nav.open{visibility:visible;pointer-events:auto;opacity:1;clip-path:inset(0);transform:none}
  .topbar #nav>a:not(.nav-cta){padding:14px 0;font-size:17px}
