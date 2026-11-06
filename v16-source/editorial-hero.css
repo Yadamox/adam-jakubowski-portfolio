@@ -1,0 +1,30 @@
+/* Image-led homepage. The photograph is an attributed professional reference. */
+.home-v16 .project-hero.editorial-hero{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;isolation:isolate;position:relative;max-width:none;margin:0 22px;padding:54px clamp(28px,5.3vw,94px) 142px;min-height:760px;min-height:max(760px,calc(100svh - 112px));background:#292b2c;color:#fffaf0;gap:52px;overflow:hidden}
+.hero-scene{position:absolute;inset:0;margin:0;z-index:-1;background:#353535}
+.hero-scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,20,22,.68) 0%,rgba(17,20,22,.35) 58%,rgba(17,20,22,.12) 100%),linear-gradient(0deg,rgba(17,20,22,.92) 0%,rgba(17,20,22,.08) 65%)}
+.hero-scene img{width:100%;height:100%;display:block;object-fit:cover;object-position:50% 44%}
+.hero-scene figcaption{position:absolute;left:clamp(28px,5.3vw,94px);right:clamp(28px,5.3vw,94px);bottom:27px;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #ffffff50;padding-top:18px;color:#f1eeea;font-size:12px;line-height:1.6;letter-spacing:.02em}
+.editorial-hero .hero-heading{padding:0;position:relative;z-index:1}
+.editorial-hero .hero-heading>.eyebrow{font:500 12px/1.7 ui-sans-serif,system-ui;letter-spacing:.12em;color:#f7f5ef;margin:0 0 50px;max-width:none}
+.editorial-hero .eyebrow>span{display:inline-block;margin:0 14px;color:#c5c7c6}
+.editorial-hero h1{font:400 clamp(70px,8.2vw,138px)/.99 Georgia,serif;letter-spacing:-.055em;max-width:1100px;margin:0;text-wrap:initial;color:#fffaf0}
+.editorial-hero h1 em{font-style:italic;color:#fffaf0}
+.editorial-hero .hero-invitation{display:grid;grid-template-columns:minmax(240px,470px) minmax(240px,1fr);align-items:end;gap:32px 70px;max-width:1120px;position:relative;z-index:1}
+.editorial-hero .hero-summary{font-size:19px;line-height:1.65;color:#f4f2ee;max-width:470px;margin:0}
+.editorial-hero .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin:0}
+.editorial-hero .hero-actions .button{background:#f7f4ee;color:#25292a;border:1px solid #f7f4ee;min-height:58px;font-size:16px;gap:25px;transition:background .7s,color .7s,border-color .7s}
+.editorial-hero .hero-actions .button:hover,.editorial-hero .hero-actions .button:focus-visible{background:#d7d8d6;border-color:#d7d8d6;color:#141718;transform:none}
+.editorial-hero .quiet-link{color:#fffaf0;font-size:15px;border-color:#ffffff90}
+.editorial-hero a:focus-visible{outline:2px solid #fff;outline-offset:6px}
+.editorial-baseline{margin:0 22px;padding:22px clamp(28px,5.3vw,94px);border:0;font-size:12px;color:#4f5457;letter-spacing:.035em}
+.home-v16 .personal-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:10vw;align-items:center;max-width:1480px;padding-top:108px;padding-bottom:108px}
+.personal-heading h2{max-width:650px;font-size:clamp(42px,5.1vw,76px);line-height:1.05}
+.personal-heading>p:not(.eyebrow){max-width:510px;font-size:20px;color:#575d60;margin:30px 0}
+.personal-intro figure{margin:0;position:relative;padding:0 0 28px 28px}
+.personal-intro figure:before{content:"";position:absolute;inset:28px 28px 0 0;border:1px solid #bfc1bf;z-index:0}
+.personal-intro img{display:block;position:relative;width:100%;height:440px;object-fit:cover;object-position:center 34%;filter:saturate(.65)}
+@media(min-width:1700px){.home-v16 .project-hero.editorial-hero{padding-left:max(94px,calc((100vw - 1480px)/2));padding-right:max(94px,calc((100vw - 1480px)/2))}}
+@media(max-width:1100px){.home-v16 .project-hero.editorial-hero{min-height:740px;margin:0 16px;padding:42px 40px 145px}.editorial-hero h1{font-size:clamp(68px,8.4vw,100px)}.editorial-hero .hero-heading>.eyebrow{font-size:11px;margin-bottom:45px}.editorial-hero .hero-invitation{gap:30px;grid-template-columns:1fr 1fr}.editorial-hero .hero-summary{font-size:18px}.hero-scene figcaption{left:40px;right:40px;font-size:11px}.editorial-baseline{margin:0 16px;padding-left:40px;padding-right:40px}.personal-intro img{height:370px}.home-v16 .personal-intro{gap:7vw}}
+@media(max-width:760px){.home-v16 .project-hero.editorial-hero{margin:0 10px;min-height:740px;min-height:max(710px,calc(100svh - 90px));padding:33px 25px 125px;gap:45px}.editorial-hero .hero-heading>.eyebrow{font-size:10px;line-height:1.9;letter-spacing:.075em;margin:0 0 45px;max-width:310px}.editorial-hero .eyebrow>span{margin:0 5px}.editorial-hero h1{font-size:clamp(47px,10.6vw,76px);letter-spacing:-.055em;line-height:1.02;margin:0;max-width:100%}.hero-scene img{object-position:58% 45%}.hero-scene:after{background:linear-gradient(90deg,#11141696,#11141620),linear-gradient(0deg,#111416ed 0%,#1114167a 50%,#11141638 100%)}.editorial-hero .hero-invitation{display:block;max-width:500px}.editorial-hero .hero-summary{font-size:17px;line-height:1.6;max-width:390px}.editorial-hero .hero-actions{margin-top:23px;gap:15px}.editorial-hero .hero-actions .button{font-size:14px;padding:14px 17px;min-height:51px;gap:20px}.editorial-hero .hero-actions .quiet-link{font-size:13px}.hero-scene figcaption{display:block;left:25px;right:25px;bottom:22px;padding-top:14px;font-size:10px;line-height:1.7}.hero-scene figcaption span{display:block}.editorial-baseline{margin:0 10px;padding:17px 25px;font-size:10px;gap:12px}.home-v16 .personal-intro{display:flex;flex-direction:column;align-items:stretch;padding-top:60px;padding-bottom:65px;gap:35px}.personal-heading h2{font-size:43px;max-width:500px}.personal-heading>p:not(.eyebrow){font-size:18px;margin:24px 0}.personal-intro figure{width:min(100%,420px);align-self:center;padding:0 0 20px 20px}.personal-intro figure:before{inset:20px 20px 0 0}.personal-intro img{height:355px}}
+@media(max-width:350px){.home-v16 .project-hero.editorial-hero{padding-left:20px;padding-right:20px;min-height:760px}.editorial-hero h1{font-size:43px}.hero-scene figcaption{left:20px;right:20px}.editorial-hero .hero-summary{font-size:16px}.editorial-baseline{padding-left:20px;padding-right:20px}}
+@media(prefers-reduced-motion:reduce){.editorial-home *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,6 +1,6 @@
 # Adam Jakubowski — project delivery for custom furniture and fit-out
 
-> Independent project management and delivery advisory for custom furniture projects, in Polish, English and German.
+> External project management for agreed interior delivery projects, a project stage or a work package, in Polish, English and German. Furniture, installation and transport coordination may form part of the agreed scope.
 
 Important context:
 
@@ -11,7 +11,7 @@ Important context:
 
 ## Main pages
 
-- [Private-client services](https://adam-jakubowski.com/en/private-clients): Scope, pricing rules and responsibility boundaries for B2C services.
+- [Private-client services](https://adam-jakubowski.com/en/private-clients): Whole projects, stages or furniture/installation/delivery packages; separately priced independent advice and handover assistance. Scope and responsibility boundaries for B2C services.
 - [Services for companies](https://adam-jakubowski.com/en/for-companies): B2B delivery support and fee models.
 - [How I work](https://adam-jakubowski.com/en/process): Qualification, scope definition, delivery and close-out process.
 - [Experience and materials](https://adam-jakubowski.com/en/evidence): Case study and clearly labelled example materials.

@@ -1,50 +1,60 @@
-# Strona Adam Jakubowski — v13
+# Strona Adam Jakubowski — v16
 
-Statyczna, trójjęzyczna strona usługowa PL/EN/DE. Produkcja działa na Cloudflare Pages.
+Statyczna witryna PL/EN/DE na Cloudflare Pages. Zewnętrzny PM całego
+uzgodnionego projektu, wybranego etapu lub pakietu prac.
 
-## Źródło i generowanie
+## Odtwarzalny build
 
-- Punkt wejścia: `build_v13.py`; cały build jest samowystarczalny w tym repozytorium.
-- Treści i bazowe szablony: `build_v10.py`; case study: `case-studies-source.json`.
-- Warstwa układu v13: `transform_v13.py`; style i ruch: `site-v13.css`, `site-v13.js`.
-- `nojs-v13.css` jest wczytywany wyłącznie przez `noscript`: pełna nawigacja bez JS, bez przeskoku strony przy wczytywaniu skryptu.
-- `base_content.py` odczytuje definicje treści przez AST, bez ponownego generowania stron podczas testów.
-- `approved-v13-sha256.json` i `test_v13.py` chronią zaakceptowany wygląd oraz treść; różnice techniczne: produkcyjne indeksowanie i wydzielenie fallbacku no-JS.
-- Nie edytuj ręcznie stron generowanych — następny build je nadpisze.
-- Podglądy v12/v13 i iCloud nie są zależnościami procesu publikacji.
+- `build_v16.py` to produkcyjny punkt wejścia. Nie wymaga podglądów ani iCloud.
+- `v16-source/` zawiera generatory, CSS/JS i `base-source.zip` z niezmiennym
+  wejściem bazowym. Archiwum jest rozpakowywane wyłącznie do katalogu roboczego.
+- `approved-v16-sha256.json`: 93 pliki zaakceptowanego podglądu. Przed konwersją
+  produkcyjną każdy z nich musi odtworzyć się identycznie.
+- Różnice produkcyjne: usunięte wyłącznie podglądowe noindex/nofollow,
+  zachowane noindex podziękowań, publiczny robots/llms, parametr cache JS v16.
+- Przywrócono wcześniejsze ograniczenia pominięte w podglądzie: brak
+  automatycznego oferowania usług zagranicznych na stronie DE oraz
+  odpowiedzialność za własny zakres i brak wyłączenia odpowiedzialności ustawowej.
+- `built-v16-sha256.json` kontroluje wynik po konwersji. HTML nie edytuj ręcznie.
+- Stare generatory i testy v13 są historyczne; nie służą do budowania v16.
 
-## Testy
+## Testy i publikacja
 
 ```bash
 npm install
-npm run verify
-```
-
-Test obejmuje 65 plików HTML, linki, odpowiedniki językowe, formularze, prywatność, ceny, SEO, nagłówki bezpieczeństwa i metadane zdjęć.
-
-## Pakiet produkcyjny
-
-```bash
 npm run release
-```
-
-Pakiet powstaje w `../.cloudflare-release`. Zawiera wyłącznie pliki publiczne.
-
-## Wdrożenie
-
-```bash
 npx wrangler pages deploy ../.cloudflare-release --project-name adam-jakubowski --branch main
 ```
 
-Po wdrożeniu sprawdź domenę główną, `www`, adres Pages, routing bez `.html`, nagłówki i Lighthouse. Dane logowania Cloudflare nie mogą trafić do repozytorium.
+`npm run release` wykonuje build, testy 65 HTML, linków, języków, formularzy,
+prywatności, cen, SEO, nagłówków i obrazów; pakiet publiczny trafia do
+`../.cloudflare-release`. Źródła, archiwum bazowe i testy nie są publikowane.
 
-## Formularze
+Testy przeglądarkowe (Chrome i `puppeteer-core` dostępne lokalnie):
 
-Formularze nie przesyłają danych do zewnętrznego operatora. Skrypt przygotowuje wiadomość w lokalnym programie pocztowym użytkownika; użytkownik wysyła ją samodzielnie.
+```bash
+SITE_URL=https://adam-jakubowski.com node verification/test_browser.cjs
+SITE_URL=https://adam-jakubowski.com node verification/test_contact.cjs
+SITE_URL=https://adam-jakubowski.com node verification/test_followup.cjs
+```
 
-## Zasady publikacyjne
+Raporty i zrzuty powstają pod `verification/`, bez włączania do Gita/pakietu.
+`RESUME_MATRIX=1` służy wyłącznie do dokończenia przerwanego runnera po
+pełnej zaliczonej macierzy; sprawdza kompletność raportu i wersję zdalnego JS.
+Domyślnie wykonywana jest pełna macierz od początku.
 
-- Nie używaj materiałów poufnych ani plików wykluczonych.
-- Nie rozszerzaj roli Adama ani STOLPIN ponad udokumentowany zakres.
-- Nie usuwaj komunikatu o bramce formalnej, dopóki nie zostanie ona zamknięta.
-- Każdą publikację poprzedzaj `npm run release` i kontrolą produkcji.
+Po publikacji: odczyt apex, www, Pages i konkretnego wdrożenia; porównanie
+z pakietem, wszystkie trasy, formularze i zachowanie mobilne. Lighthouse
+uruchamiaj osobno, po zakończeniu testów przeglądarkowych.
+
+## Kontakt i ograniczenia
+
+Formularze przygotowują lokalną wiadomość, pozwalają ją skopiować i wymagają
+samodzielnego wysłania. Nie ma backendu wysyłającego ani zewnętrznego operatora.
+Testy przechwytują mailto i nie wysyłają wiadomości.
+
+- Bez materiałów poufnych i nieuprawnionego portfolio.
+- Zakres doświadczenia STOLPIN nie oznacza portfolio nowej działalności.
+- Bramka formalna pozostaje: wyłącznie niezobowiązujące zapytania, bez
+  odpłatnych umów, płatności i rezerwacji do zamknięcia formalności.
+- Ceny niezależnego doradztwa nie są cennikiem prowadzenia lub wykonania projektu.

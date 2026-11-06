@@ -104,8 +104,8 @@ for lang in LANGS:
     for l in LANGS:
         if f"/{l}/landbyska-verket" not in doc.links: errors.append(f"Bad case language switch: {rel} -> {l}")
     if dict(doc.alts).get("x-default") != DOMAIN+"/pl/landbyska-verket": errors.append(f"Bad case x-default: {rel}")
-    if "/site-v13.css?v=13" not in text or "/site-v13.js?v=13" not in text or "PROJECT DIRECTION" in text:
-        errors.append(f"Case study not unified with v13: {rel}")
+    if "/site-v13.css?v=13" not in text or "/site-v13.js?v=16" not in text or "PROJECT DIRECTION" in text:
+        errors.append(f"Case study not unified with v16: {rel}")
     if any(x in text for x in ("elementy konstrukcyjne sufitu","structural ceiling elements","konstruktive Deckenelemente","Jeden punkt koordynacji","One coordination point","Ein Koordinationspunkt")):
         errors.append(f"Case study overstates scope: {rel}")
 
@@ -118,11 +118,11 @@ for rel in FORM_FILES:
         errors.append(f"Unsafe form transport: {rel}")
     if not any(s.get("name")=="service" and "required" in s for s in doc.selects): errors.append(f"Missing required service selector: {rel}")
     if len([o for o in doc.options if o.get("value")]) < 4: errors.append(f"Too few service options: {rel}")
-    if "programie pocztowym" not in text and "email application" not in text and "E-Mail-Programm" not in text:
+    if not any(x in text for x in ("programie pocztowym", "program pocztowy", "email application", "E-Mail-Programm")):
         errors.append(f"Missing local email explanation: {rel}")
     lang=rel[:2]
-    if __import__('base_content').T[lang]['availability_notice'] not in text: errors.append(f"Missing formal-gate notice: {rel}")
-    if "b2b" in rel and not any(x in text for x in ("Nie wpisuj danych osób fizycznych","Do not enter personal","Keine personenbezogenen")):
+    if not all(x in text for x in {"pl":("niezobowiązujące zapytania","nie przyjmuję płatności","nie rezerwuję realizacji"),"en":("non-binding enquiries only","do not enter into paid contracts, accept payments or reserve project dates"),"de":("unverbindliche Anfragen","keine entgeltlichen Verträge, nehme keine Zahlungen an und reserviere keine Ausführungstermine")}[lang]): errors.append(f"Missing formal-gate notice: {rel}")
+    if "b2b" in rel and not any(x in text for x in ("Nie wpisuj danych osób trzecich","Do not enter third-party personal data","Keine personenbezogenen")):
         errors.append(f"Missing third-party data warning: {rel}")
 
 for rel in PRIVACY_FILES:
@@ -140,10 +140,10 @@ for required in ("590 zł — cena końcowa","do 60 minut","3 dni roboczych","2 
 if pl_private.count(__import__('base_content').T['pl']['availability_notice']) < 4: errors.append("Formal-gate notice missing beside B2C prices")
 if "kontrola instalacji ani zastępstwo odbioru przez uprawnionego specjalistę" not in pl_private: errors.append("Visible-scope handover boundary missing")
 pl_business=docs["pl/dla-firm.html"][0]
-for required in ("wartość netto faktycznie koordynowanych pakietów","minimalne wynagrodzenie","limit maksymalny"):
-    if required not in pl_business.lower(): errors.append(f"B2B percentage rule missing: {required}")
+for required in ("zakres i wycena ustalane indywidualnie","zewnętrzny pm całego projektu","konflikt interesów ze stolpin"):
+    if required not in pl_business.lower(): errors.append(f"B2B agreed scope/pricing/conflict rule missing: {required}")
 for lang,home in (("pl","pl/index.html"),("en","en/index.html"),("de","de/index.html")):
-    if __import__('base_content').T[lang]['availability_notice'] not in docs[home][0]: errors.append(f"Formal-gate notice missing on home: {home}")
+    if not all(x in docs[home][0] for x in {"pl":("niezobowiązujące zapytania","nie przyjmuję płatności","nie rezerwuję realizacji"),"en":("non-binding enquiries only","do not enter into paid contracts, accept payments or reserve project dates"),"de":("unverbindliche Anfragen","keine entgeltlichen Verträge, nehme keine Zahlungen an und reserviere keine Ausführungstermine")}[lang]): errors.append(f"Formal-gate notice missing on home: {home}")
 if __import__('base_content').T['de']['territory_note'] not in docs['de/privatkunden.html'][0]: errors.append("German foreign-sales limitation missing")
 if "ten opis nie wyłącza odpowiedzialności wymaganej prawem" not in pl_private: errors.append("Own-scope liability clarification missing")
 
