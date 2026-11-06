@@ -56,7 +56,7 @@ def resolves(path):
     elif not target.suffix: candidates += [target.with_suffix(".html"), target/"index.html"]
     return any(p.exists() and p.is_file() for p in candidates)
 
-html_files=sorted(p for p in ROOT.rglob("*.html") if "node_modules" not in p.parts and ".wrangler" not in p.parts)
+html_files=sorted(p for p in ROOT.rglob("*.html") if not any(part in p.relative_to(ROOT).parts for part in ("node_modules", ".wrangler", "verification")))
 if len(html_files) != 65: errors.append(f"Expected 65 HTML files, found {len(html_files)}")
 
 docs={}
